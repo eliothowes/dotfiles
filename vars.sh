@@ -3,10 +3,10 @@ set -e
 
 FILES_TO_BACKUP="
   .gitconfig
-  .gitconfig-personal
   .gitconfig-medicspot
+  .gitconfig-personal
+  .p10k.zsh
   .profile
   .zlogin
   .zshrc
-  .pk10.zsh
 "

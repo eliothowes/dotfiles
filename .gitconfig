@@ -1,0 +1,21 @@
+# This is Git's per-user configuration file.
+
+# If path includes dev then use personal config
+[includeIf "gitdir:~/dev/"]
+  path = ~/.gitconfig-personal
+# If path includes medicspot use medicspot config
+[includeIf "gitdir:~/medicspot/"]
+  path = ~/.gitconfig-medicspot
+
+[alias]
+    st = "!gstash() { git stash push -m \"$(date)\" ;}; gstash"
+    app = "stash apply"
+    c = "checkout"
+    cb = "checkout -b"
+    cm = "commit -m"
+[core]
+	editor = vim
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
