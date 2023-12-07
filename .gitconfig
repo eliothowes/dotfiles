@@ -1,5 +1,8 @@
 # This is Git's per-user configuration file.
 
+# If working on current repo then use personal config
+[includeIf "gitdir:~/.dotfiles/"]
+  path = ~/.gitconfig-personal
 # If path includes dev then use personal config
 [includeIf "gitdir:~/dev/"]
   path = ~/.gitconfig-personal
