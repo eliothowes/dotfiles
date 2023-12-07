@@ -3,9 +3,9 @@
 # If path includes dev then use personal config
 [includeIf "gitdir:~/dev/"]
   path = ~/.gitconfig-personal
-# If path includes medicspot use medicspot config
-[includeIf "gitdir:~/medicspot/"]
-  path = ~/.gitconfig-medicspot
+# If path includes vira use vira config
+[includeIf "gitdir:~/vira/"]
+  path = ~/.gitconfig-vira
 
 [alias]
     st = "!gstash() { git stash push -m \"$(date)\" ;}; gstash"

@@ -21,13 +21,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
   git
-  zsh-autosuggestions
   docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+#
+# *** AWS Command Completion ***
+#
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
 
 #
 # *** Aliases ***
@@ -37,17 +43,16 @@ alias zshconfig="code ~/.zshrc"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Opens git branches in interactive picker
+alias gitcb='git branch --sort=-committerdate | fzf --header Checkout | xargs git checkout'
+
 #
 # ** PATH **
 #
+
+export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin"
 
 # Add node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Add flutter binaries
-export PATH="$PATH:$HOME/flutter/bin"
-
-# Add android platform tools binaries
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
