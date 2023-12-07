@@ -14,7 +14,7 @@
 $ ./copy_dotfiles.sh
 ```
 
-### Copy existing dotfiles from local machine to this repo
+### Push new versions of dotfiles from local machine to GitHub
 ```
 $ ./backup_dotfiles.sh
 ```
